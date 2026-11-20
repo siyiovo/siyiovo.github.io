@@ -1,0 +1,83 @@
+baseURL: "https://siyiovo.github.io/"
+defaultContentLanguage: zh-cn
+defaultContentLanguageInSubdir: false
+disableDefaultLanguageRedirect: true
+hasCJKLanguage: true
+title: "Jinhua Deng | 机器人定位与运动控制"
+theme: hugo-profile
+enableRobotsTXT: true
+enableGitInfo: false
+enableEmoji: false
+disableKinds:
+  - taxonomy
+  - term
+
+languages:
+  zh-cn:
+    label: "中文"
+    locale: "zh-CN"
+    weight: 1
+    contentDir: content/zh-cn
+    title: "Jinhua Deng | 机器人定位与运动控制"
+  en:
+    label: "English"
+    locale: "en-US"
+    weight: 2
+    contentDir: content/en
+    title: "Jinhua Deng | SLAM Localization & Motion Control"
+
+params:
+  description: "Jinhua Deng 的双语机器人作品集，关注 SLAM 定位、点云处理与运动控制。"
+  author: "Jinhua Deng"
+  favicon: "images/jinhua-deng.jpg"
+  color:
+    textColor: "#17202A"
+    secondaryTextColor: "#52606D"
+    textLinkColor: "#155EEF"
+    backgroundColor: "#F5F7F9"
+    secondaryBackgroundColor: "#FFFFFF"
+    primaryColor: "#155EEF"
+    primaryTextColor: "#FFFFFF"
+  hero:
+    enable: true
+    intro: "你好，我是"
+    title: "Jinhua Deng."
+    subtitle: "专注 SLAM 定位与运动控制的机器人软件工程师"
+    content: "我把机器人系统拆成可验证的问题：从点云、几何与传感器融合，到控制接口和工程工具。这里记录正在整理的作品与开源实践。"
+    image: "/images/jinhua-deng.jpg"
+    roundImage: false
+    bottomImage:
+      enable: false
+    button:
+      enable: false
+  about:
+    enable: false
+  experience:
+    enable: false
+  education:
+    enable: false
+  projects:
+    enable: false
+  achievements:
+    enable: false
+  contact:
+    enable: false
+  navbar:
+    align: ms-auto
+    brandName: "JD / Robotics"
+    disableSearch: true
+    stickyNavBar:
+      enable: true
+    disableThemeToggle: true
+  theme:
+    defaultTheme: light
+    disableThemeToggle: true
+  footer:
+    recentPosts: false
+    socialNetworks: false
+    copyright: false
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ .Language.Locale }}" data-type="software" data-radius="sharp" data-buttons="solid">
+  <head>
+    {{ partial "head.html" . }}
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+  </head>
+  <body data-ground="sky">
+    <a class="skip-link" href="#main-content">{{ if eq .Language.Lang "zh-cn" }}跳到主要内容{{ else }}Skip to content{{ end }}</a>
+    {{ partial "site-header.html" . }}
+    <main id="main-content">
+      {{ block "main" . }}{{ end }}
+    </main>
+    {{ partial "site-footer.html" . }}
+  </body>
+</html>

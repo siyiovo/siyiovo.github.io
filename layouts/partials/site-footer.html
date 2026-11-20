@@ -1,0 +1,13 @@
+<footer class="site-footer" id="contact">
+  <div class="page-frame site-footer__inner">
+    <div>
+      <h2>{{ if eq .Language.Lang "zh-cn" }}交流机器人项目{{ else }}Discuss a robotics project{{ end }}</h2>
+      <a class="email-link" href="mailto:2540488682@qq.com">2540488682@qq.com</a>
+    </div>
+    <div class="footer-links">
+      <a href="https://github.com/siyiovo" target="_blank" rel="noreferrer">GitHub</a>
+      <span>{{ if eq .Language.Lang "zh-cn" }}项目图片来源：siyiovo/pcl_registration_visualizer{{ else }}Project image: siyiovo/pcl_registration_visualizer{{ end }}</span>
+      <span>© {{ now.Year }} Jinhua Deng</span>
+    </div>
+  </div>
+</footer>

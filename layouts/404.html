@@ -1,0 +1,8 @@
+{{ define "title" }}{{ if eq .Language.Lang "zh-cn" }}页面未找到{{ else }}Page not found{{ end }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<section class="not-found page-frame">
+  <h1>404</h1>
+  <p>{{ if eq .Language.Lang "zh-cn" }}这个页面暂时不存在。{{ else }}This page could not be found.{{ end }}</p>
+  <a class="button button--primary" href="{{ .Site.Home.RelPermalink }}">{{ if eq .Language.Lang "zh-cn" }}返回首页{{ else }}Return home{{ end }}</a>
+</section>
+{{ end }}

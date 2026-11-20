@@ -1,0 +1,42 @@
+<header class="site-header">
+  <div class="site-header__inner page-frame">
+    <div class="site-header__identity">
+      <a class="wordmark" href="{{ .Site.Home.RelPermalink }}" aria-label="Jinhua Deng, {{ if eq .Language.Lang "zh-cn" }}首页{{ else }}home{{ end }}">
+        <span class="wordmark__mark" aria-hidden="true">JD</span>
+        <span>Jinhua Deng</span>
+      </a>
+      <a class="github-link" href="https://github.com/siyiovo" target="_blank" rel="noopener noreferrer">
+        <img src="{{ "icons/github.svg" | relURL }}" alt="" aria-hidden="true" width="18" height="18">
+        <span>GitHub</span>
+      </a>
+    </div>
+    <nav class="primary-nav" aria-label="{{ if eq .Language.Lang "zh-cn" }}主导航{{ else }}Main navigation{{ end }}">
+      <a href="{{ .Site.Home.RelPermalink }}#skills">{{ if eq .Language.Lang "zh-cn" }}技能{{ else }}Skills{{ end }}</a>
+      <a href="{{ .Site.Home.RelPermalink }}#work">{{ if eq .Language.Lang "zh-cn" }}作品{{ else }}Work{{ end }}</a>
+      <a href="{{ .Site.Home.RelPermalink }}#about">{{ if eq .Language.Lang "zh-cn" }}关于{{ else }}About{{ end }}</a>
+      <a href="{{ .Site.Home.RelPermalink }}#contact">{{ if eq .Language.Lang "zh-cn" }}联系{{ else }}Contact{{ end }}</a>
+      <span class="language-switch" aria-label="{{ if eq .Language.Lang "zh-cn" }}选择语言{{ else }}Choose language{{ end }}">
+        {{ $translations := .AllTranslations }}
+        {{ $homeTranslations := .Site.Home.AllTranslations }}
+        {{ $currentLang := .Language.Lang }}
+        {{ range (slice "zh-cn" "en") }}
+          {{ $languageCode := . }}
+          {{ $target := false }}
+          {{ range $translations }}
+            {{ if eq .Language.Lang $languageCode }}{{ $target = . }}{{ end }}
+          {{ end }}
+          {{ if not $target }}
+            {{ range $homeTranslations }}
+              {{ if eq .Language.Lang $languageCode }}{{ $target = . }}{{ end }}
+            {{ end }}
+          {{ end }}
+          {{ if $target }}
+            {{ $locale := "en-US" }}
+            {{ if eq $languageCode "zh-cn" }}{{ $locale = "zh-CN" }}{{ end }}
+            <a href="{{ $target.RelPermalink }}" lang="{{ $locale }}" hreflang="{{ $locale }}"{{ if eq $currentLang $languageCode }} aria-current="page"{{ end }}>{{ if eq $languageCode "zh-cn" }}中文{{ else }}EN{{ end }}</a>
+          {{ end }}
+        {{ end }}
+      </span>
+    </nav>
+  </div>
+</header>

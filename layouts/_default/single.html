@@ -1,0 +1,15 @@
+{{ define "title" }}{{ .Title }} | {{ .Site.Title }}{{ end }}
+{{ define "main" }}
+<article class="project-detail page-frame">
+  <a class="back-link" href="{{ .Site.Home.RelPermalink }}#work">{{ if eq .Language.Lang "zh-cn" }}返回作品{{ else }}Back to work{{ end }}</a>
+  <header class="project-detail__header">
+    <p class="project-entry__meta"><span>{{ .Params.category }}</span>{{ if .Params.placeholder }}<span class="status-note">{{ if eq .Language.Lang "zh-cn" }}内容待补充{{ else }}Details pending{{ end }}</span>{{ end }}</p>
+    <h1>{{ .Title }}</h1>
+    <p class="project-detail__intro">{{ .Description }}</p>
+    {{ with .Params.tags }}<ul class="tag-list">{{ range . }}<li>{{ . }}</li>{{ end }}</ul>{{ end }}
+  </header>
+  {{ if .Params.image }}<figure class="project-detail__image"><img src="{{ .Params.image | relURL }}" alt="{{ .Params.imageAlt }}" width="960" height="600"></figure>{{ end }}
+  <div class="project-detail__content">{{ .Content }}</div>
+  {{ with .Params.source }}<a class="button button--primary project-detail__source" href="{{ . }}" target="_blank" rel="noreferrer">{{ if eq $.Language.Lang "zh-cn" }}打开 GitHub 仓库{{ else }}Open GitHub repository{{ end }}</a>{{ end }}
+</article>
+{{ end }}
